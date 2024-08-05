@@ -17,14 +17,6 @@ based on [reviewdog/action-vint](https://github.com/reviewdog/action-vint)
 [![github-pr-check example](https://user-images.githubusercontent.com/96727/70858620-bdc2fb80-1f48-11ea-9c1a-b5abb5a6566a.png)](https://user-images.githubusercontent.com/96727/70858620-bdc2fb80-1f48-11ea-9c1a-b5abb5a6566a.png)
 [![github-pr-review example](https://user-images.githubusercontent.com/96727/70858610-a1bf5a00-1f48-11ea-84c4-7ee7392548e6.png)](https://user-images.githubusercontent.com/96727/70858610-a1bf5a00-1f48-11ea-84c4-7ee7392548e6.png)
 
-Notice:
-This action is `composition action`. It need `npm ci`.
-
-You accept below one:
-
-- Your workflow manually setup to run `npm ci`.
-- This action automatic run `npm ci`.
-
 ## Inputs
 
 ### `github_token`

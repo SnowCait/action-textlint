@@ -11,31 +11,7 @@ echo '::group::🐶 Installing reviewdog ... https://github.com/reviewdog/review
 curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b "${TEMP_PATH}" "${REVIEWDOG_VERSION}" 2>&1
 echo '::endgroup::'
 
-echo '::group:: Installing textlint ...  https://github.com/textlint/textlint'
-if [ -x "./node_modules/.bin/textlint"  ]; then
-  echo 'already installed'
-elif [[ "${INPUT_PACKAGE_MANAGER}" == "npm" ]]; then
-  echo 'npm ci start'
-  npm ci
-elif [[ "${INPUT_PACKAGE_MANAGER}" == "yarn" ]]; then
-  echo 'yarn install start'
-  yarn install
-elif [[ "${INPUT_PACKAGE_MANAGER}" == "pnpm" ]]; then
-  echo 'pnpm install start'
-  pnpm install
-else
-  echo 'The specified package manager is not supported.'
-  echo '::endgroup::'
-  exit 1
-fi
-
-if [ -x "./node_modules/.bin/textlint"  ]; then
-  npx textlint --version
-else
-  echo 'This repository was not configured for textlint, process done.'
-  exit 1
-fi
-echo '::endgroup::'
+npx textlint --version
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
