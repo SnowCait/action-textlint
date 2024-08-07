@@ -91,7 +91,7 @@ fi
 # textlint exitcode: 0 success 1 lint error detect 2 fatal error
 if [[ "${INPUT_FAIL_ON_ERROR}" == "true"      \
       && (( "${textlint_exit_val}" != "0"     \
-           || "${textlint_exit_val}" != "1" ) \
+           && "${textlint_exit_val}" != "1" ) \
          || "${reviewdog_exit_val}" != "0" )  \
    ]]; then
   exit 1
